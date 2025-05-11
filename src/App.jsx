@@ -22,6 +22,7 @@ function App() {
       console.log(data);
       const dataSample  = data.slice(0,5);
       setEmoiisData(dataSample);
+      setIsGameOn(true);
     }
 
   
@@ -38,7 +39,7 @@ function App() {
         <h1> Memory Game</h1>
 
         {!isGameOn && <Form handleSubmit={startGame} />}
-        {isGameOn && <MemoryCard handleClick={turnCard} />}
+        {isGameOn && <MemoryCard handleClick={turnCard} data={emojisData} />}
     </main>
        
     
